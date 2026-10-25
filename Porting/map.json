@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "package": "swift-ai-xai",
+  "status": "coarse-import",
+  "upstream": [
+    {
+      "name": "@ai-sdk/xai",
+      "implementation": [
+        "packages/xai/src"
+      ],
+      "tests": [
+        "packages/xai/src/files/xai-files.test.ts",
+        "packages/xai/src/lazy-schemas.test.ts",
+        "packages/xai/src/realtime/xai-realtime-model.test.ts",
+        "packages/xai/src/responses/convert-to-xai-responses-input.test.ts",
+        "packages/xai/src/responses/convert-xai-responses-usage.test.ts",
+        "packages/xai/src/responses/xai-responses-language-model.test.ts",
+        "packages/xai/src/responses/xai-responses-prepare-tools.test.ts",
+        "packages/xai/src/responses/xai-responses-raw-usage.test.ts",
+        "packages/xai/src/supports-reasoning-effort.test.ts",
+        "packages/xai/src/tool/x-search.test.ts",
+        "packages/xai/src/xai-batch.test.ts",
+        "packages/xai/src/xai-error.test.ts",
+        "packages/xai/src/xai-image-model.test.ts",
+        "packages/xai/src/xai-provider.test.ts",
+        "packages/xai/src/xai-speech-model.test.ts",
+        "packages/xai/src/xai-transcription-model.test.ts",
+        "packages/xai/src/xai-video-model.test.ts"
+      ]
+    }
+  ],
+  "swift": {
+    "sources": [
+      "Sources/SwiftAIXAI/FileClients.swift",
+      "Sources/SwiftAIXAI/ImageInputCapabilities.swift",
+      "Sources/SwiftAIXAI/OpenAICompatibleChatUsage.swift",
+      "Sources/SwiftAIXAI/OpenAICompatibleChatXAI.swift",
+      "Sources/SwiftAIXAI/XAIModels.swift",
+      "Sources/SwiftAIXAI/XAIProvider.swift",
+      "Sources/SwiftAIXAI/XAIRealtimeModel.swift",
+      "Sources/SwiftAIXAI/XAIResponses.swift",
+      "Sources/SwiftAIXAI/XAIResponsesBatchLanguageModel.swift",
+      "Sources/SwiftAIXAI/XAIResponsesOptions.swift"
+    ],
+    "tests": [
+      "Tests/SwiftAIXAITests/FixtureDownloadTransport.swift",
+      "Tests/SwiftAIXAITests/TestSupport.swift",
+      "Tests/SwiftAIXAITests/XAIChatProviderTests.swift",
+      "Tests/SwiftAIXAITests/XAIProviderTests.swift",
+      "Tests/SwiftAIXAITests/XAIRealtimeModelTests.swift",
+      "Tests/SwiftAIXAITests/XAIResponsesUpstreamParityTests.swift",
+      "Tests/SwiftAIXAITests/XAISocketTestSupport.swift"
+    ],
+    "resources": []
+  },
+  "differences": [
+    {
+      "kind": "native-adaptation",
+      "reason": "Preserve Swift async/await, Sendable, Foundation transport and existing documented gaps; see Docs/CoreV6Parity.md and PortingStatus.md."
+    }
+  ],
+  "reviewNote": "M6: xAI owns Responses request policy, legacy Chat dialect, native audio/image/video/files/realtime/batch behavior and tests. Reuses the public OpenAI Responses engine and file helpers without OpenAI credentials or routing. Baseline and gaps unchanged.",
+  "canonicalOnlyReferences": [],
+  "canonicalDirectory": "Packages/swift-ai-xai"
+}
