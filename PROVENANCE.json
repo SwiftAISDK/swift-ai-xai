@@ -1,49 +1,55 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-xai",
-  "version": "1.0.0",
-  "releaseID": "modular-3",
+  "version": "1.1.0",
+  "releaseID": "weekly-upstream-20261101",
   "source": {
-    "commit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
-    "baseCommit": "7fc9b4cd72f8f83b75ba7eee2e38d37127539317",
+    "commit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
+    "baseCommit": "ea057797494ab9bb66df8c6bfd8edc10245b20e7",
     "workingTree": false,
-    "inputsSHA256": "49b802ba4a30454f78c9886ab3114537ef659ab3e6db7775479b7351f6e3f0ab"
+    "inputsSHA256": "b46f3e07b0a583d6fee81035987d74a06fc5c6109cbdf228144d1172d2c3676e"
   },
   "dependencies": [
     {
       "package": "swift-ai-core",
-      "from": "1.1.0"
+      "from": "1.2.0"
     },
     {
       "package": "swift-ai-openai",
-      "from": "1.0.0"
+      "from": "1.1.0"
     },
     {
       "package": "swift-ai-openai-compatible",
-      "from": "1.0.0"
+      "from": "1.1.0"
     }
   ],
   "changes": [
     {
-      "id": "remaining-package-extraction",
-      "notes": "Extract the existing runtime, typed settings and standalone tests from the compatibility aggregate. Preserve the reviewed npm baseline and existing capability/gap boundaries.",
-      "compatibility": "Initial independent Swift package version. Existing SwiftAISDK entry points remain in the development compatibility facade; no npm-version equivalence is implied."
+      "id": "weekly-upstream-20261101",
+      "notes": "Portable none maps to low with compatibility warning using the exact published model regexp, preserving Grok4.20, future multi-digit-major and suffix boundaries; exact grok-4.6 alone maps portable xhigh/max to xhigh, other models fall back to high. Explicit provider overrides remain untouched. Shared canonical Responses engine deduplicates citations repeated by final output_item.done and emits missing text/citations for completion-only or announced-without-delta message items; xAI-specific fallback preserves other provider namespaces. Native apiKeyProvider resolves fresh authentication for Responses, preserved legacy Chat, files, batch, image, speech, transcription, video/polls and realtime client-secret requests; WS streaming transcription resolves fresh headers at connect with case-insensitive override precedence and no placeholders. configureXAIChat installs owning reasoning policy on reusable compatible engine so OpenAI reasoning mapping does not alter the xAI request first. Reviewed upstream: @ai-sdk/xai 5.0.30 to 5.0.35. Validation passed: node Scripts/test-packages.mjs (all 52 owning package suites and the compatibility facade); node Scripts/sdk.mjs generate --check; node --test Scripts/tests/*.test.cjs (27 passed); docs-site check and build (100 pages). Live provider calls were not run.",
+      "compatibility": "Minor release for additive native API; existing static settings and call sites remain compatible. Updated direct dependency minimums are recorded in the manifest. Existing documented JS/framework and native product gaps remain; version-delta review does not imply full parity or live-service testing. Explicit custom authentication skips an unused credential supplier, a deliberate native callback-order adaptation."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-xai",
   "upstream": [
     {
       "name": "@ai-sdk/xai",
-      "reviewedVersion": "5.0.30",
+      "reviewedVersion": "5.0.35",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.xAI`, `XAIResponses.swift`, `XAIResponsesBatchLanguageModel.swift`, `XAITools`, `XAIImageModel`, `XAIVideoModel`, `XAIProviderTests.swift`, `ProviderGroupBUpstreamParity20260831Tests.swift`",
+      "evidence": "`AIProviders.xAI`, `XAIResponses.swift`, `XAIResponsesBatchLanguageModel.swift`, `XAITools`, `XAIImageModel`, `XAIVideoModel`, `XAIProviderTests.swift`, `ProviderGroupBUpstreamParity20260831Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-BO93IsBpRv0oaPpTvUKYtHKj09DIET2I0/TOYo/+VitFqyEG+SVlY/KVgESyjgUG+hqplt9gAWdutS6vWUJ6FA==",
-      "sourceRef": "npm:@ai-sdk/xai@5.0.30",
-      "testRef": "682e2dd71456f14f9da33a1b983d1998c3a1184c",
-      "testRefRelationship": "inventory-snapshot-not-release-verified",
-      "contractFamilies": [],
-      "contractReview": "not-imported; inspect upstream declarations before extraction"
+      "archiveIntegrity": "sha512-2Yf9BQae0A+kjHLrUaTG4f4+fqRihAC4MyCXHEpRb3bvR9Kc1ioNWwtEygCqZNTdhLnrqZEdiG2NSGa+mtJgnw==",
+      "sourceRef": "npm:@ai-sdk/xai@5.0.35",
+      "testRef": "028a025398782f4938303f48fbeee45c79af544b",
+      "testRefRelationship": "matching-release",
+      "contractFamilies": [
+        "ImageModelV4",
+        "LanguageModelV4",
+        "ProviderV4",
+        "SpeechModelV4",
+        "TranscriptionModelV4"
+      ],
+      "contractReview": "2026-11-01: published declarations, source and exact matching-release changed tests reviewed; scoped dispositions and Swift translations are in Docs/WeeklyUpstreamAudit20261101.json. Existing broader product gaps remain; reviewed delta is not full-package parity."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -62,7 +68,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Porting/map.json",
-      "sha256": "73aa55c499c9e107bbc5398fd8c67a99a2ad708ea77efa90cdf74f2b47a8ffa9"
+      "sha256": "dad47e8b323c9d06fac8233b1471a31050dc2229fd7e31ec9264cbef841a933a"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/README.md",
@@ -82,15 +88,15 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Sources/SwiftAIXAI/OpenAICompatibleChatXAI.swift",
-      "sha256": "9935f12361f692af0f22e17b2af6b8065a98ac88947936a127750196152b841e"
+      "sha256": "3f78d53154d1e1b1b3a4af0c171a5fc39ac17115acf00801e0d858ce12b1ee7e"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Sources/SwiftAIXAI/XAIModels.swift",
-      "sha256": "7c8dce2c6dcd59dcd04bbfaa0b20a54ddef67ab0bdca6a9dc059cf4e85533d14"
+      "sha256": "440e6ae13351e0d5cc3809a02c6a1028b07d78620a00fb3b466f3cb34012c435"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Sources/SwiftAIXAI/XAIProvider.swift",
-      "sha256": "c80fad063df03000c252b0ea9f93a6901dfc1cb639417d104dda1dfe66eb5344"
+      "sha256": "53bffcd6ba2d90f3d3f118024dc0c63fcfd9e6b86908823d0263468cc353eb40"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Sources/SwiftAIXAI/XAIRealtimeModel.swift",
@@ -117,16 +123,24 @@
       "sha256": "9ef7b52737a661f176cbdc2a5209e67637845e2cb18dab17ec58546f33e5b36a"
     },
     {
+      "canonicalPath": "Packages/swift-ai-xai/Tests/SwiftAIXAITests/Weekly20261101CredentialsTests.swift",
+      "sha256": "f766c2860f899752f278961fc57fa008987c9d781e148bce9caee89e670e7397"
+    },
+    {
+      "canonicalPath": "Packages/swift-ai-xai/Tests/SwiftAIXAITests/Weekly20261101XAITests.swift",
+      "sha256": "9767770bf89238e2e15af1c75e1f1a34062b7da20034be33b0f1ebd8b6d46ddc"
+    },
+    {
       "canonicalPath": "Packages/swift-ai-xai/Tests/SwiftAIXAITests/XAIChatProviderTests.swift",
       "sha256": "743cca4e36432cc2a6e199a931ab0707448fa9a40baf30bc872283ddbfa5c3ad"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Tests/SwiftAIXAITests/XAIProviderTests.swift",
-      "sha256": "910310a9aac8bee0709be572882809075f338a4f5c0bc725929fa85ffb86d527"
+      "sha256": "4057c5c1c94bd185036a171502cebb789122fcc9101218bebc406b30ff572bd8"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Tests/SwiftAIXAITests/XAIRealtimeModelTests.swift",
-      "sha256": "2a53c4d35a6494e535ba5a9cb4f111c41eafd90bbe49f063dc3edb7870b9bc87"
+      "sha256": "68fe12a5e4b2cdcb94143b43a7b94e92df18c3bad634ce6d3ab607ea59c278a5"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Tests/SwiftAIXAITests/XAIResponsesUpstreamParityTests.swift",
