@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
   "package": "swift-ai-xai",
-  "version": "1.2.1",
-  "releaseID": "weekly-upstream-20261114",
+  "version": "1.2.2",
+  "releaseID": "weekly-upstream-20261115",
   "source": {
-    "commit": "07fbf86b82d83d9724bd03622e9e87e74395286f",
-    "baseCommit": "07fbf86b82d83d9724bd03622e9e87e74395286f",
+    "commit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
+    "baseCommit": "1e543b35e0259a5bda888665dacf2d4a7f1bb0ed",
     "workingTree": false,
-    "inputsSHA256": "63e472c0fe891cb7636d225e1c6467e4761dc3721be68081f2afa9f0b656bb29"
+    "inputsSHA256": "5508ffc6347bffaed13fb29409eb856df9a7796d3ebdcb6f623d1e8871b52999"
   },
   "dependencies": [
     {
@@ -25,22 +25,22 @@
   ],
   "changes": [
     {
-      "id": "weekly-upstream-20261114",
-      "notes": "Refresh the versioned request identity while retaining the current native request, response and stream behavior. Internal upstream model-catalog reorganizations preserve the existing native policies. Reviewed npm delta: @ai-sdk/xai 5.0.40 to 5.0.45. Validation: `node Scripts/test-packages.mjs` passed all 52 owning suites and 1731 facade tests; tooling 27/27, generation/isolation checks, standalone exports and 106 minimum/latest consumers, documentation check and 101-page build passed. Publication requires green exact-source Swift 6.3.3 CI. Paid/live verification and full-package parity are not claimed.",
-      "compatibility": "Compatible behavior/header correction. Original public selectors are preserved. npm baselines and Swift SemVer are independent; this reviewed delta does not establish full-package or live-service parity."
+      "id": "weekly-upstream-20261115",
+      "notes": "Align the versioned request identity with the reviewed published package while retaining native open String model IDs and existing request, response, option, error, stream and telemetry behavior. Derived TypeScript model-ID/catalog reorganizations preserve the existing native runtime policies. Reviewed npm delta: @ai-sdk/xai 5.0.45 to 5.0.46. Validation passed: node Scripts/test-packages.mjs (55 owning packages, 2451 owning tests and 1736 compatibility tests), generation checks, 27 tooling tests, isolation/version checks, deterministic exports and minimum-dependency consumers. Documentation check/build passed (104 pages). Publication is gated by exact-source Swift 6.3.3 CI; subsequent public refs and clients are recorded in Docs/ReleaseVerification20261115.json. Paid/live-service checks were not run; this delta does not claim full-package parity.",
+      "compatibility": "Compatible versioned request identity correction; existing public selectors and dependency minimums remain. npm baselines and Swift SemVer are independent."
     }
   ],
   "canonicalDirectory": "Packages/swift-ai-xai",
   "upstream": [
     {
       "name": "@ai-sdk/xai",
-      "reviewedVersion": "5.0.45",
+      "reviewedVersion": "5.0.46",
       "ledgerKind": "provider",
-      "evidence": "`AIProviders.xAI`, `XAIResponses.swift`, `XAIResponsesBatchLanguageModel.swift`, `XAITools`, `XAIImageModel`, `XAIVideoModel`, `XAIProviderTests.swift`, `ProviderGroupBUpstreamParity20260831Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json",
+      "evidence": "`AIProviders.xAI`, `XAIResponses.swift`, `XAIResponsesBatchLanguageModel.swift`, `XAITools`, `XAIImageModel`, `XAIVideoModel`, `XAIProviderTests.swift`, `ProviderGroupBUpstreamParity20260831Tests.swift`; 2026-11-01 delta: Docs/WeeklyUpstreamAudit20261101.json; 2026-11-08 delta: Docs/WeeklyUpstreamAudit20261108.json; 2026-11-14 delta: Docs/WeeklyUpstreamAudit20261114.json; 2026-11-15 delta: Docs/WeeklyUpstreamAudit20261115.json",
       "reviewStatus": "imported-reviewed-with-gaps",
-      "archiveIntegrity": "sha512-6ZPt65wnDbboC8Aseu4OdVYrO1mvM7QIoEefWQ7+TP/s6GhQxurn56kGsBmVkvQ2FXWG+/ZLl6fEG7nQZOo07Q==",
-      "sourceRef": "npm:@ai-sdk/xai@5.0.45",
-      "testRef": "8bc7652cdb13fc84722666eb93f45acd0d131eee",
+      "archiveIntegrity": "sha512-5VKUxcEt1aByfktW5W/pg98xpKwgizyZgR0auorWbkiAO2sfUo17TVuvCnEbX1ln9bjEnxYsbu8wJoM+WdWwcA==",
+      "sourceRef": "npm:@ai-sdk/xai@5.0.46",
+      "testRef": "0e8e0543aeda7d4dd4ce6eade0d5b7d5a43644c1",
       "testRefRelationship": "matching-release",
       "contractFamilies": [
         "ImageModelV4",
@@ -51,7 +51,7 @@
         "TranscriptionModelV4",
         "VideoModelV4"
       ],
-      "contractReview": "2026-11-14: verified published source/declarations and exact matching-release changed tests reviewed separately; native ports, per-file dispositions and retained gaps are recorded in Docs/WeeklyUpstreamAudit20261114.json. Delta review is not full-package or live-service parity."
+      "contractReview": "2026-11-15: published source/declarations and exact matching-release tests reviewed separately. Native delta scenarios, per-file dispositions, unchanged-catalog evidence and explicit remaining gaps are recorded in Docs/WeeklyUpstreamAudit20261115.json. Required checks remain a separate gate; no full-package/live-service parity claim."
     }
   ],
   "note": "Independent port. Imported test refs and contract review gaps retain their original status; export is not new upstream parity proof.",
@@ -70,7 +70,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Porting/map.json",
-      "sha256": "630fb4de5487445615e048d3cb913dd24f2f6e73c5a305b90a7b2c9bfd9dba4e"
+      "sha256": "221f249b8b0c55db7415afca5502476a144a3eb8c21197eba3bd450f7fe4c1cb"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/README.md",
@@ -98,7 +98,7 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Sources/SwiftAIXAI/XAIProvider.swift",
-      "sha256": "79efe1e0366f0f4e23696e8148f36e6f46d1b50238ddb59548d7d3e49f7468f5"
+      "sha256": "d0618c70f727ed4c1c6cce2a57a29b20d2b060717585d7d32f83154b79e4fdec"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Sources/SwiftAIXAI/XAIRealtimeModel.swift",
@@ -142,11 +142,11 @@
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Tests/SwiftAIXAITests/XAIProviderTests.swift",
-      "sha256": "9b765ee2f680cb2c04cd4d184e4e4680715047bc69e223a6bea36845e07fc4aa"
+      "sha256": "ae10eb82dbe071c1c3eb3b1a04427878d175d381b6881f8536b809671d96a12b"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Tests/SwiftAIXAITests/XAIRealtimeModelTests.swift",
-      "sha256": "443d0b8476fe1015f86a1abdd8789b6de2cc68561bcd35b7fca9d03e05306668"
+      "sha256": "58bb628a5a7e293ddcb62865ece87fbf987de8d346e5d26b3205654721f83bdb"
     },
     {
       "canonicalPath": "Packages/swift-ai-xai/Tests/SwiftAIXAITests/XAIResponsesUpstreamParityTests.swift",
