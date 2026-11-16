@@ -1,5 +1,5 @@
 <!-- Generated distribution; edit the canonical repository. -->
-# swift-ai-xai 1.2.2
+# swift-ai-xai 1.3.0
 
 Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions are in PROVENANCE.json and Porting/.
 
@@ -8,7 +8,7 @@ Independent Swift-native port of Vercel AI SDK. Source and upstream dispositions
 Add this package to your SwiftPM dependencies:
 
 ```swift
-.package(url: "https://github.com/SwiftAISDK/swift-ai-xai.git", from: "1.2.2")
+.package(url: "https://github.com/SwiftAISDK/swift-ai-xai.git", from: "1.3.0")
 ```
 
 Products: `SwiftAIXAI`.
@@ -16,34 +16,29 @@ Contribute and report issues in the canonical SwiftAISDK repository.
 
 ## Authored usage guide
 
-# SwiftAIXAI
+# xAI (Grok) for Swift
 
-Swift-native port of `@ai-sdk/xai`. Maintained in the canonical SwiftAISDK repository and exported as an independent Swift package.
+`SwiftAIXAI` adds xAI (Grok) to [SwiftAISDK](https://github.com/SwiftAISDK/SwiftAISDK), an independent Swift port of the Vercel AI SDK. It ports `@ai-sdk/xai` and supports text generation, image generation, transcription, speech, video generation and provider files.
+
+Provider guide with models, options, streaming and errors:
+
+- [xAI (Grok)](https://swiftaisdk.github.io/SwiftAISDK/providers/xai/)
+
+## Usage
+
+Add the `SwiftAI` product from `swift-ai-core` and the `SwiftAIXAI` product from this package to your target, then create the provider:
 
 ```swift
+import SwiftAI
 import SwiftAIXAI
 
-let provider = try XAIProvider(configuration: .init(apiKey: "..."))
+let provider = try AIProviders.xAI(configuration: XAIProviderSettings())
 ```
 
-Settings accept a custom base URL, headers, query parameters and an injected
-`AITransport`. Models use the common SwiftAIProvider protocols. Existing upstream
-baselines, capabilities and documented gaps remain unchanged.
+By default the provider reads `XAI_API_KEY` from the environment; values set in `XAIProviderSettings` take precedence.
 
-Responses request policy, legacy Chat behavior, Files, Batch, realtime and media
-adapters belong to this package. It composes the public `SwiftAIOpenAI` Responses
-engine and managed-file helpers and the `SwiftAIOpenAICompatible` Chat engine;
-these dependencies do not install OpenAI credentials or select OpenAI endpoints.
-New code should use `languageModel` or `responses`; `chat` preserves the earlier
-Swift compatibility surface removed from upstream xAI 5.
+To use every provider through one dependency, add the complete [SwiftAISDK](https://github.com/SwiftAISDK/SwiftAISDK) package instead; see [Install](https://swiftaisdk.github.io/SwiftAISDK/getting-started/install/).
 
-Run the standalone suite from the canonical checkout:
+## Contributing
 
-```sh
-swift test --package-path Packages/swift-ai-xai
-```
-
-The canonical repository owns all edits. Distribution manifests and repositories
-are generated from the catalog; see `Porting/map.json` and the canonical provider guide.
-
-See [provider usage and capabilities](https://github.com/SwiftAISDK/SwiftAISDK/blob/main/docs-site/scripts/provider-guides/xai.md) for authentication, options and supported surfaces.
+This package is exported from `Packages/swift-ai-xai` in the canonical [SwiftAISDK](https://github.com/SwiftAISDK/SwiftAISDK) repository. Open issues and pull requests there.

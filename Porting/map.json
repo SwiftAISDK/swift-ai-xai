@@ -54,6 +54,7 @@
       "Tests/SwiftAIXAITests/XAIChatProviderTests.swift",
       "Tests/SwiftAIXAITests/XAIProviderTests.swift",
       "Tests/SwiftAIXAITests/XAIRealtimeModelTests.swift",
+      "Tests/SwiftAIXAITests/XAIResponsesInputUpstreamParityTests.swift",
       "Tests/SwiftAIXAITests/XAIResponsesUpstreamParityTests.swift",
       "Tests/SwiftAIXAITests/XAISocketTestSupport.swift"
     ],
