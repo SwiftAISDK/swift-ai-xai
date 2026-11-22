@@ -12,7 +12,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/SwiftAISDK/swift-ai-core.git", from: "1.6.0"),
         .package(url: "https://github.com/SwiftAISDK/swift-ai-openai.git", from: "1.2.0"),
-        .package(url: "https://github.com/SwiftAISDK/swift-ai-openai-compatible.git", from: "1.2.0")
+        .package(url: "https://github.com/SwiftAISDK/swift-ai-openai-compatible.git", from: "1.4.0")
     ],
     targets: [
         .target(name: "SwiftAIXAI", dependencies: [.product(name: "SwiftAIProvider", package: "swift-ai-core"), .product(name: "SwiftAITransport", package: "swift-ai-core"), .product(name: "SwiftAIProviderUtilities", package: "swift-ai-core"), .product(name: "SwiftAIOpenAI", package: "swift-ai-openai"), .product(name: "SwiftAIOpenAICompatible", package: "swift-ai-openai-compatible")]),
